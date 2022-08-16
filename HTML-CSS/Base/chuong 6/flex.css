@@ -1,0 +1,90 @@
+body{
+    list-style-type: none;
+}
+.list {
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+  align-items: baseline;
+  /* margin: 0 2rem; */
+}
+.list__item {
+  margin: 1rem 2rem;
+  padding: 1rem;
+  background-color: purple;
+  color: white;
+  order: 0;
+}
+.list__item:nth-child(3) {
+  order: 1;
+  /* order này sẽ xét độ ưu tiên cho nó càng cao thì độ ưu tiên càng thấp
+  nó sẽ bị đẩy xuống dư */
+}
+.image__list{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    margin-left: -1rem;
+   
+    
+    /* flex-direction: row; */
+}
+.image__item{
+    width: 25%;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+
+}
+.image{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+/* tạo hình tam giác */
+.boxed{
+  display: inline-block;
+  /* width: 5rem;
+  height: 5rem; */
+  /* background-color: pink; */
+  margin: 2rem auto;
+
+  border-bottom: 100px solid orange;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 100px solid transparent;
+
+}
+.oval__shape{
+  width: 10rem;
+  height: 5rem;
+  background-color: red;
+  margin:  0 auto;
+  border-radius:10rem/5rem ;
+}
+.triangle__topleff__shape{
+  /* width: 5rem;
+  height: 5rem; */
+  /* background: #000; */
+  
+  /* display: inline-block;
+  border-bottom: 2rem solid transparent;
+  border-left: 2rem solid orange;
+  border-right: 2rem solid transparent;
+  border-top: 2rem solid orange; */
+
+
+      /* width: 0;
+      height: 0; */
+      display: inline-block;
+      border-top: 100px solid red;
+      border-right: 100px solid orange;
+
+}
+.parallelogram{
+  width: 5rem;
+  height: 5rem;
+  margin: 2rem auto;
+  background-color: rebeccapurple;
+  transform: skew(20deg);
+}

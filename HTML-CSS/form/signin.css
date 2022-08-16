@@ -1,0 +1,205 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-weight: normal;
+  padding: 3rem 15rem;
+  background-color: #fbfbfd;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input {
+  outline: none;
+}
+
+.signin {
+  width: 100%;
+  height: 80vh;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 4rem;
+}
+.signin__content {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+.signin__image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+.signin__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.signin__caption {
+  color: red;
+}
+.signin-social {
+  display: flex;
+  justify-content: space-around;
+  margin: 3rem 0;
+}
+.signin-social__item {
+  width: auto;
+  padding: 0 1.5rem;
+  height: 2rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+}
+.signin-social__text {
+  transform: translateY(300%);
+  padding: 5px;
+}
+.signin-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.signin-form__group {
+  position: relative;
+  width: 250px;
+}
+.signin-form__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: #ccc;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  color: black;
+  margin: 1.5rem;
+}
+.signin-form__input:placeholder-shown {
+  font-size: 1.5rem;
+}
+.signin__submit {
+  padding: 1rem;
+  background-color: #1C2738;
+  color: white;
+  width: 15rem;
+  margin: 3rem 5rem;
+  border-radius: 2rem;
+  outline: none;
+  background-image: linear-gradient(to right, #E55D87 0%, #5FC3E4 51%, #E55D87 100%);
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.75s linear;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+.signin__submit:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.checkbox {
+  margin: 1rem;
+}
+.checkbox__input {
+  display: none;
+}
+.checkbox__input:checked + .checkbox__label::after {
+  opacity: 1;
+  visibility: visible;
+}
+.checkbox__label {
+  position: relative;
+  padding-left: 5rem;
+  cursor: pointer;
+}
+.checkbox__label::before {
+  content: "";
+  width: 4rem;
+  height: 4rem;
+  background-color: #fc556f;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 1rem;
+}
+.checkbox__label::after {
+  content: "";
+  width: 3rem;
+  height: 1.5rem;
+  position: absolute;
+  top: -5px;
+  left: 2px;
+  transform: rotate(-45deg);
+  border-left: 3px solid white;
+  border-bottom: 3px solid white;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s linear;
+}
+
+.checkbox2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(80%);
+}
+.checkbox2__input {
+  display: none;
+}
+.checkbox2__input:checked + .checkbox2__lable {
+  background-color: white;
+}
+.checkbox2__input:checked + .checkbox2__lable > .checkbox2__spin {
+  transform: translateX(5rem);
+  background-color: black;
+}
+.checkbox2__lable {
+  display: inline-block;
+  width: 10rem;
+  height: 5rem;
+  background-color: #ccc;
+  border-radius: 5rem;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.25s linear;
+}
+.checkbox2__spin {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 5rem;
+  background-color: white;
+  transition: 0.25s linear;
+}
+
+.dark-mode {
+  background-color: #1C2738;
+  transition: 0.25s linear;
+  color: white;
+}
+
+.dark-mode__body {
+  background-color: #1F2028;
+  transition: 0.25s linear;
+  color: white;
+}
+
+/*# sourceMappingURL=signin.css.map */

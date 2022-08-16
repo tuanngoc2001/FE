@@ -1,0 +1,13 @@
+@mixin  size($width,$heigh:$width) {
+    width: $width;
+    height: $heigh;
+    
+}
+.boxshadow{
+    @include size(3rem);
+    background-color: red;
+    border-radius: 3rem;
+    box-shadow: 4rem 0 0 yellow,8rem 0 0 0 blue,
+    0 4rem 0 0 gray,4rem 4rem 0 0 orange,8rem 4rem 0 0 green
+    ;
+}

@@ -1,0 +1,176 @@
+body{
+    /* background-color: lightseagreen; */
+    width: 100%;
+    height: 100vh;
+}
+.container
+{
+   
+    width: 100%;
+    height: 100%;
+    position: flex;
+}
+.container__youtube{
+    position: absolute;
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: red;
+}
+.container__card{
+    width: 20rem;
+    height: 100%;
+    background-color: black;
+    position: relative;
+}
+.container__card__sale{
+    background-color: orange;
+    width: 6rem;
+    height: 3rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    position: absolute;
+    text-align: center;
+}
+
+.bar{
+    width: 15rem;
+    height: 1rem;
+    background-color: gray;
+    border-radius: 1rem;
+    margin: 5rem auto 0;
+    position: relative;
+}
+.bar__progress{
+    background-color: green;
+    width: 50%;
+    height: 100%;
+    border-radius: inherit;
+}
+.bar__circle{
+    background-color: green;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.title{
+    font-size:1.2rem;
+    font-weight: bold;
+    position: relative;
+    padding-left:2rem ;
+}
+.title::before{
+    /* content: "Tôi tên là"; */
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform:translateY(-50%);
+
+    
+}
+
+.line{
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+.line::after{
+    content: "";
+    background-color: orange;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.line__text{
+    position: relative;
+    display: inline-block;
+    padding: 1rem;
+    z-index: 2;
+    background-color: white;
+}
+.icon {
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+    margin: 5rem auto;
+    border-radius: 8px;
+    color: purple;
+}
+.icon::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: currentColor;
+    opacity: 0.5;
+}
+.icon__user{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.effect{
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+    border: solid 1px black;
+    display: inline-block;
+    margin: 5rem;
+    z-index: 1;
+}
+.effect:hover{
+    color: white;
+    transition: color 0.25s linear;
+}
+.effect::before{
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    background-color: orange;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.25s linear;
+}
+.effect:hover::before{
+    width: 100%;
+}
+.boxed{
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+}
+.boxed::after{
+    content: "";
+    background-color: red;
+    position: absolute;
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: rotate(-45deg);
+}

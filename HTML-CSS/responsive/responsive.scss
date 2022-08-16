@@ -1,0 +1,133 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+*{
+    box-sizing: border-box;
+}
+@mixin size($width,$height) {
+    width: $width;
+    height: $height;  
+}
+// .author{
+//     max-width: 1000px;
+//     height: 30rem;
+//     margin: 2rem auto;
+//     display: flex;
+//     &__image{
+//         width: 35%;
+//         border-radius: 1rem 0 0 1rem;
+//         object-fit: cover;
+//     }
+//     &__content{
+//         width: 65%;
+//         padding: 3rem;
+//         // background-color: #eee;
+//     }
+//     &__contact{
+//         padding-top: 3rem;
+//         text-transform: capitalize;
+//     }
+//     &-social{
+//         display: inline-block;
+//         margin-left: 1rem;
+//     }
+// }
+// @media screen and(min-width:768px){
+//     .author{
+//         &__image{
+//             width: 35%;
+//         }
+//         &__content{
+//             width: 65%;
+//         }
+        
+//     }
+    
+// }
+// @media screen and(max-width:767px) {
+//     .author{
+//         flex-direction: column;
+//         padding: 0 2rem;
+//         height: auto;
+//         &__image{
+//             width: 100%;
+//             height: 30rem;
+//             // border-radius: 1rem 0 0 1rem;
+//             object-fit: cover;
+//             border-radius: 1rem 1rem 0 0;
+
+//         }
+//         &__content{
+//             width: 100%;
+//             padding: 0;
+//         }
+//     }
+    
+// }
+
+
+
+//post
+
+.post{
+    &__list{
+        padding: 2rem;
+        display: flex;
+        margin-left: -2rem;
+    }
+    &__item{
+        margin-left: 2rem;
+        // height: auto;
+        width: calc(33.3% - 2rem);
+    
+    }
+    &__image{
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+    }
+    &__author{
+        width: 5rem;
+        height: 5rem;
+        border-radius: 5rem;
+        object-fit: cover;
+        margin-top: auto;
+        // margin-left: 2rem;
+
+        
+    }
+    &__content{
+        border: 1px solid #eee;
+        height: calc(100% - 20rem);
+        padding: 2rem;
+        display: flex;
+        // justify-content: space-between;
+        //hoặc có thể dùng
+        justify-self: flex-start;
+        // và ở trên dùng margin-top:auto
+        flex-direction: column;
+    }
+   
+    
+}
+.circle{
+    &__media{
+        position: relative;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+    // &__image{
+    //     position: absolute;
+    // }
+}

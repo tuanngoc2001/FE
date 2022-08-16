@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./admin.css">
+
+</head>
+<body>
+    <div class="admin">
+        <div class="admin__infor">
+            <h2 class="admin__title">Admin</h2>
+            <div class="admin__search">
+                <input placeholder="search ..." type="text" class="admin__search-input">
+                <i class="fa-solid fa-magnifying-glass admin__search-icon" ></i>
+            </div>
+        </div>
+        <div>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>username</th>
+                        <th>password</th>
+                        <th>roles</th>
+                        <th>status</th>
+                        <th>action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>admin</td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae sit sapiente sunt, beatae ullam numquam, illo voluptatem praesentium aspernatur veniam esse eveniet quis aut nihil quia, laborum enim odit rem.</td>
+                        <td>
+                            <select>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </td>
+                        <td>
+                            <div class="status">
+                                <p class="status__active">Active</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="admin-table__action">
+                            <i class="fa-solid fa-pen"></i>
+                            <i class="fa-solid fa-wrench"></i>
+                            <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- <h2 data-bind="text:firstName"></h2>
+        <input type="text" data-bind="value:firstName"> -->
+
+
+        <!-- load name -->
+        <p>firstName:<span data-bind="text:firstName"></span></p>
+        <p>lastName:<span data-bind="text:lastName"></span></p>
+        <!-- <p>fullName:<span data-bind="text:fullName"></span></p> -->
+        <!-- array -->
+        <ul data-bind="foreach:friends">
+            <li>
+                <span data-bind="text:$data.name"></span>
+                
+        <button data-bind="click:remove">Remove</button>
+            </li>
+        </ul>
+        <input type="text" name="" id="friend">
+        <button data-bind="click:addfriend">Add friend</button>
+     
+    </div>
+    <script text="text/javascript" src="js/knockout.js"></script>
+    <script>
+        // NOTE
+        // chỉ được 1 applyBindings trong 1 file html(đã thử)
+        //knockout có đầy đủ các hàm như slide,reverse,remove,replace,.... của js
+        function AppViewModel()
+        {
+            this.message="Hello World!"
+        }
+        var viewModel={
+            firstName:ko.observable("Nguyễn"),
+            lastName:ko.observable("Tuấn Ngọc")
+
+        }
+        viewModel.fullName=ko.dependentObservable(function (){
+            return this.firstName()+" "+this.lastName()
+        },viewModel)
+        // ko.applyBindings(viewModel)
+        //array
+        function friend(name)
+        {
+            return{
+                name:ko.observable(name),
+                remove:function()
+                {
+                // this.friends.pop(); xóa phần tử cuối cùng trong mảng
+                     viewModel01.friends.remove(this)
+                }
+            };
+        }
+
+        var viewModel01={
+            firstName:ko.observable("Nguyễn"),
+            lastName:ko.observable("Tuấn Ngọc"),
+            friends: ko.observableArray([new friend("Tuấn Ngọc")]),
+            addfriend:function()
+            {
+                this.friends.push(new friend(document.getElementById('friend').value))
+            },
+            
+        }
+        //đối với 
+  
+        ko.applyBindings(viewModel01)
+        
+    </script>
+</body>
+</html>

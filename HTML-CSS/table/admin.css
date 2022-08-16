@@ -1,0 +1,57 @@
+.admin__infor {
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.admin__title {
+  display: inline-block;
+  text-align: right;
+  width: 50%;
+}
+.admin__search {
+  margin: 0 auto;
+  position: relative;
+}
+.admin__search-input {
+  outline: none;
+  transform: scale(1.3);
+}
+.admin__search-input:focus {
+  border: 1px solid #5AA8F2;
+}
+.admin__search-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(100%, 30%);
+  z-index: 2;
+}
+.admin-table {
+  width: 80%;
+  margin: 2rem auto;
+  background-color: #eee;
+}
+.admin-table tbody td {
+  text-align: center;
+}
+.admin-table__action i {
+  margin-left: 1rem;
+  cursor: pointer;
+  color: #5AA8F2;
+}
+
+.status {
+  display: inline-block;
+  text-align: center;
+}
+.status__active {
+  color: green;
+  text-transform: lowercase;
+  padding: 0.5rem 1.5rem;
+  background-color: rgba(0, 128, 0, 0.3);
+  border-radius: 1rem;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=admin.css.map */

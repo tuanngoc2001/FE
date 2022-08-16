@@ -1,0 +1,15 @@
+.background{
+    min-height: 500px;
+    width: auto;
+    background-repeat: no-repeat;
+    /* background-position: center center;  */
+    /* background-position-x: center; */
+    /* background-attachment: fixed; */
+    
+
+
+
+    /* background-size: cover; */
+
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy6FrjlUdttD1pdfbvsMdCOJCmZiPiGZ_VyA&usqp=CAU");
+}

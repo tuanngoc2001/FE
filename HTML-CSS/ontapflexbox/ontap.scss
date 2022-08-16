@@ -1,0 +1,132 @@
+$primary--color:#72DFC6;
+$second--color:#1BBF93;
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+*{
+    box-sizing: border-box;
+}
+@mixin size($width,$height) {
+    width: $width;
+    height: $height;  
+}
+.work{
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 0 auto;
+    &__heading{
+        font-weight: bold;
+        font-size: 2.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+        &::before{
+            content: "";
+            border-radius: 2px;
+            @include size(4.5rem,4px);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $primary--color;
+
+        }
+    }
+    &__filter{
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__tap{
+        display: flex;
+        cursor: pointer;
+        padding-left: 0;
+        font-weight: 600;
+    }
+    &-tap__item{
+        border: 3px solid $second--color;
+        padding: 6px;
+        text-align: center;
+        border-radius: 40% 10% 30% 40%;
+        &:not(:first-child)
+        {
+            margin-left: 2rem;
+        }
+        &:hover{
+            background-color: $second--color;
+            color: white;
+        }
+        
+        // bord: 5px 5px ;
+    }
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &-tap__link{
+        // padding: 1rem;
+        background-color: $primary--color;
+        color: white;
+        border-radius: 3px;
+    }
+    &__item{
+        padding-left: 0;
+        width: calc(25% - 1.5rem);
+        
+        &:not(first-child){
+            margin-left: 1.5rem;
+        }
+        
+        // background-size: cover;
+    }
+    &__image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 6px;
+        
+    }
+}
+@media screen and(max-width:1023px) {
+    .work{
+        &__item{
+            width: calc(50% - 1.5rem);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+    }
+    
+}
+@media screen and(max-width:767px) {
+    .work{
+        &__item{
+            width: calc(100% - 1.5rem);
+            // margin-top: 0;
+            // margin-bottom: 1.5rem;
+        }
+        &__filter{
+            flex-direction: column;
+            align-items: center;
+        }
+        &__tab{
+            flex-wrap: wrap;
+            justify-content: center;
+            
+        }
+        &-tap__item{
+            margin-bottom: 1.5rem;
+            
+        }
+    }
+    
+}

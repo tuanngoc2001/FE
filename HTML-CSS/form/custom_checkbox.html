@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./custom.css" />
+  </head>
+  <body>
+    <div class="checkbox">
+        <input type="checkbox" class="checkbox__input" id="checkbox__input">
+        <label for="checkbox__input" class="checkbox__label">Custom checkbox</label>
+    </div>
+    <div class="radio">
+      <input type="radio" class="radio__input" id="radio__input">
+      <label for="radio__input" class="radio__label">Custom radio</label>
+  </div>
+  <div class="checkbox2">
+    <input type="checkbox" class="checkbox2__input" id="checkbox2__input">
+    <label for="checkbox2__input" class="checkbox2__lable" onclick="myFunction()">
+      <div class="checkbox2__spin"></div>
+    </label>
+  </div>
+  <div class="checkbox3">
+    <input type="checkbox" class="checkbox3__input" id="checkbox3__input">
+    <label for="checkbox3__input" class="checkbox3__lable">
+      <div class="checkbox3__spin"></div>
+    </label>
+  </div>
+  <script>
+    function myFunction() {
+       var element = document.body;
+       element.classList.toggle("dark-mode");
+    }
+    </script>
+  </body>
+</html>
+

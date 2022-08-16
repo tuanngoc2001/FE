@@ -1,0 +1,68 @@
+table {
+  width: 100%;
+}
+table th {
+  color: #8c94a7;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 2rem;
+  text-align: center;
+}
+table thead tr {
+  border-bottom: 5px solid red;
+}
+table tbody td {
+  text-align: center;
+}
+table .desc {
+  white-space: nowrap;
+  max-width: 15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+table .checkbox__input {
+  display: none;
+}
+table .checkbox__input:checked + .checkbox__lable > .checkbox__circle {
+  background-color: #06B1FF;
+  transform: translate(200%, -40%);
+}
+table .checkbox__input:checked + .checkbox__lable {
+  background-color: #202C76;
+}
+table .checkbox__lable {
+  display: inline-block;
+  width: 3rem;
+  height: 4px;
+  background-color: #EAEAEA;
+  transform: translateY(-100%);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+table .checkbox__circle {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #B6B6B6;
+  transform: translate(-10%, -40%);
+  transition: 0.5s ease;
+}
+table .status {
+  display: inline-block;
+  text-align: center;
+}
+table .status__active {
+  color: green;
+  text-transform: lowercase;
+  padding: 0.5rem 1.5rem;
+  background-color: rgba(0, 128, 0, 0.3);
+  border-radius: 1rem;
+  font-weight: bold;
+}
+table .action i {
+  margin-left: 1rem;
+}
+
+/*# sourceMappingURL=statistical.css.map */

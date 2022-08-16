@@ -1,0 +1,43 @@
+// .header{
+//     &__top{
+//         // color: red;
+//         font-weight: bold;
+//         // &:hover{
+//         // @include cl();
+            
+//         // }
+//     }
+// }
+// @mixin cl() {
+//     // @if $name=="r"
+//     // {
+//         color: orange;
+//     // }
+//     // @if $name=="b"
+//     // {
+//     //     color: blue;
+//     // }
+    
+// }
+@mixin size($width,$height) {
+    width: $width;
+    height: $height;
+}
+.box{
+    @include size(10rem,10rem);
+    // @include bg("b")
+    background-color: red;
+}
+// @mixin bg($color:"b")
+// {
+//     @if $color == "b"
+//     {
+//         background-color: black;
+//     }
+//     @if $color == "r"
+//     {
+//         background-color: red;
+//     }
+
+// }
+
