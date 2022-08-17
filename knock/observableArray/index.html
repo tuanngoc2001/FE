@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"
+         type = "text/javascript"></script>
+</head>
+<body>
+    <!-- tạo một mảng trong js -->
+    <!-- nó có đầy đủ các thuộc tính như remove,pop,push,replace,.... -->
+    <input type="text" name="" id="name">
+    <ul data-bind="foreach:friends">
+        <li>Name:<span data-bind="text:$data.name"></span></li>
+        <button data-bind="click:remove">Remove</button>
+        <button data-bind="click:replace">Replace</button>
+    </ul>
+    
+    
+    <script>
+        function friend(name,age)
+        {
+            return{
+                name:ko.observable(name),
+                age:ko.observable(age),
+                remove:function()
+                {
+                // this.friends.pop(); xóa phần tử cuối cùng trong mảng
+                     anotherObservableArray.friends.remove(this)
+                },
+                replace:function()
+                {
+                    alert(document.getElementById('name').value)
+                    anotherObservableArray.friends.replace(this,document.getElementById('name').value)
+                }
+            };
+        }
+        var anotherObservableArray = {
+            friends:ko.observableArray([new friend("tuấn ngọc",21)])
+        }
+        ko.applyBindings(anotherObservableArray);
+    </script>
+    <script src="../js/knockout.js"></scripts>
+</body>
+</html>
