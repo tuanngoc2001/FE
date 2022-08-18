@@ -50,3 +50,12 @@ var obj = {
 };
 logPoint(obj);
 logName(obj);
+//tuple
+//khai báo một mảng tuple
+var employee;
+employee = [[1, "Steve"], [2, "Bill"]];
+//truy cập mảng tuple
+// console.log(employee[0]);//return {1,Steve}
+// console.log(employee[1]);return {2,Bill}
+var deparment = [1, "Steve"];
+console.log(deparment[0]); //return 1
