@@ -47,7 +47,7 @@
 //     console.log(`creating pair: v1='${v1}', v2='${v2}'`);
 //     return [v1, v2];
 //   }
-//keyof
+//keyoá
 //khở tạo 1 interface
 interface Person {
     name: string;
