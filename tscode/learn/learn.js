@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 //union cho phép sử dụng nhiều kiểu dữ liệu 
 var unionTs = 'Tuấn Ngọc';
 console.log(unionTs);
@@ -33,3 +35,7 @@ var jquery = {
 console.log("jquery:" + jquery.accepts);
 var kv1 = { key: 1, value: "Steve" };
 console.log(kv1.key);
+//export/import
+//export o mot file khac va file nay import lại nó
+var hello_js_1 = require("./hello.js");
+(0, hello_js_1["default"])();

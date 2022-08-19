@@ -1,3 +1,4 @@
+
 //union cho phép sử dụng nhiều kiểu dữ liệu 
 let unionTs: (string | number) ='Tuấn Ngọc'
 console.log(unionTs);
@@ -35,10 +36,19 @@ let jquery: JQueryAjaxSettings = {
 }
 console.log("jquery:" + jquery.accepts);
 //generic
+//T va U la hai kiểu dữ liệu mình có thể đẩy vào là gì cũng đc.
 interface KeyPair<T, U> {
     key: T;
     value: U;
 }
 let kv1: KeyPair<number, string> = { key: 1, value: "Steve" }; 
 console.log(kv1.key);
+
+
+//export/import
+//export o mot file khac va file nay import lại nó
+import hello from "./hello.js";
+hello();
+
+
 

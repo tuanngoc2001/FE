@@ -49,19 +49,24 @@
 //   }
 //keyoá
 //khở tạo 1 interface
-interface Person {
-    name: string;
-    age: number;
-  }
+// interface Person {
+//     name: string;
+//     age: number;
+//   }
   
-  // `keyof Person` here creates a union type of "name" and "age", other strings will not be allowed
-  function printPersonProperty(person: Person, property: keyof Person) {
-    console.log(`Printing person property ${property}: "${person[property]}"`);
-  }
+//   // `keyof Person` here creates a union type of "name" and "age", other strings will not be allowed
+//   function printPersonProperty(person: Person, property: keyof Person) {
+//     console.log(`Printing person property ${property}: "${person[property]}"`);
+//   }
   
-  let person = {
-    name: "Max",
-    age: 27
-  };
-  //'name' sẽ đc truyển vào biến property
-  printPersonProperty(person, "name");
+//   let person = {
+//     name: "Max",
+//     age: 27
+//   };
+//   //'name' sẽ đc truyển vào biến property
+//   printPersonProperty(person, "name");
+
+
+
+
+
