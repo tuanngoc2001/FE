@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+</head>
+<body>
+    <p>Nhập vào ngày tháng năm <input data-bind="value:rawDate" type="date" name="" id=""></p>
+    <span data-bind="text:age"></span>
+    <script>
+        var obj={
+            today:new Date(),//ngày hiện tại
+            age:ko.observable(),//text hiện lên mà hình tuổi và số tháng
+            rawDate:ko.observable()//date hiện trên form
+        }
+        //khi mà form date bị thay đổi sẽ tự nhảy vào đây 
+        //sẽ tính toán số tuổi của ngày sinh được nhập vào
+        obj.rawDate.subscribe(function (newVal){
+            var b=Date.parse(newVal);
+            var t=Date.parse(obj.today);
+            var diff=t-b;
+            var y=Math.floor(diff/31449600000);
+            var m = Math.floor((diff % 31449600000)/604800000/4.3);  
+            console.log(new Date());
+            return obj.age("You are " + y + " year(s) " + m +" months old.");
+        });
+        ko.applyBindings(obj);
+    </script>
+</body>
+</html>

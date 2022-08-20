@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+    <!-- <script src="../library.js"></script> -->
+</head>
+<body>
+    <input type="text" data-bind="value:a"> -->
+    <span data-bind="text:total"></span>
+   
+
+    <!-- tính số tuổi -->
+    <script>
+        var myObservableArray=ko.observableArray();
+        myObservableArray.push("a");
+        myObservableArray.push("b");
+
+        //push myObservableArray().length=2
+        //myObservableArray()[0]=a
+        //indexOf trả về vị trí nó đứng trong mảng
+        //slice trả về giá trị bắt đầu từ vị trí index đc truyền vào
+        console.log(myObservableArray.slice(0));
+
+
+
+
+        //th với chuỗi thì dễ còn nếu là 2 số thì chưa ra
+        var obj={
+            a:ko.observable('a'),
+            b:ko.observable('b')
+        }
+        var total=ko.pureComputed(function(){
+            // obj.a(Number(obj.a));
+            // obj.b(Number(obj.b));
+            // console.log(typeof(obj.a));
+            return (obj.a()+obj.b());
+        }).extend({ notify: 'always' });
+        total.extend({rateLimit:50})
+        ko.applyBindings(obj)
+
+    </script>
+    
+</body>
+</html>
