@@ -25,7 +25,7 @@
             var y=Math.floor(diff/31449600000);
             var m = Math.floor((diff % 31449600000)/604800000/4.3);  
             console.log(new Date());
-            return obj.age("You are " + y + " year(s) " + m +" months old.");
+            obj.age("You are " + y + " year(s) " + m +" months old.");
         });
         ko.applyBindings(obj);
     </script>

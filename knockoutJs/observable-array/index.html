@@ -40,6 +40,12 @@
             return (obj.a()+obj.b());
         }).extend({ notify: 'always' });
         total.extend({rateLimit:50})
+
+
+
+        for (var prop in obj) {
+          console.log(ko.isComputed(obj[prop]));
+        }
         ko.applyBindings(obj)
 
     </script>

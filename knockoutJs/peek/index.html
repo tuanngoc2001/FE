@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+</head>
+<body>
+    <div class = "logblock">
+        <h3>Computed Log</h3>
+        <pre class = "log" data-bind = "html: log"></pre>
+     </div>
+
+    <script>
+        var obj={
+            firstName: ko.observable('John'),
+            lastName:ko.observable('Burns'),
+            computedLog:ko.observable('Log:')
+        }
+        //kiểu như lấy giá trị observable có sẵn ra
+        var log=ko.pureComputed(function(){
+            var value = obj.firstName() + " " + obj.lastName();
+            return obj.computedLog.peek()+value;
+        })
+        // function AppData() {
+        //    this.firstName = ko.observable('John');
+        //    this.lastName = ko.observable('Burns');
+        //    this.computedLog = ko.observable('Log: ');
+           
+        //    this.fullName = ko.computed(function () {
+        //       var value = this.firstName() + " " + this.lastName();
+        //       this.computedLog(this.computedLog.peek() + value + '; <br/>');
+        //       return value;
+        //    }, this);
+
+        // //    this.step = ko.observable(0);
+        // //    this.next = function () {
+        // //       this.step(this.step() === 2 ? 0 : this.step()+1);
+        // //    };
+        // };
+        
+        ko.applyBindings(obj);
+     </script>
+    
+</body>
+</html>

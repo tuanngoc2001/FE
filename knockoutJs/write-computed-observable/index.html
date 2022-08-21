@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+    <script src="../library.js"></script>
+</head>
+<body>
+    <!-- <p>FirstName: <span data-bind="text:firstName"></span></p>
+    <p>LastName: <span data-bind="text:lastName"></span></p>
+    <h3>Hello,<input type="text" data-bind="value:fullName"></h3>
+    <hr> -->
+
+
+
+
+    <div class="heading">
+        <input type="checkbox" data-bind="checked: selectedAllProduce" title="Select all/none"/> Produce
+    </div>
+    <div data-bind="foreach: produce">
+        <label>
+            <input type="checkbox" data-bind="checkedValue: $data, checked: $parent.selectedProduce"/>
+            <span data-bind="text: $data"></span>
+        </label>
+    </div>
+    <script>
+        var obj={
+            firstName:ko.observable("Tuấn"),
+            lastName:ko.observable("Ngọc"),  
+            // fullName=ko.observable() 
+        }
+        obj.fullName=ko.pureComputed({
+            read:function(){
+                // console.log("vao day rò");
+                return obj.firstName()+" "+obj.lastName();
+            },
+            write:function(value)
+            {
+                var tmp=value.lastIndexOf(" ");//lấy ra vị trí cuối cùng có dấu cách
+                //case chưa chặt vì còn 1 th nếu vị trí cuối cùng có dấu cáche
+                if(tmp>0&&tmp!=obj.fullName.length-1)
+                {
+                    obj.firstName(value.substring(0,tmp));
+                    obj.lastName(value.substring(tmp+1))
+                }
+            }
+        });
+        
+
+
+        //b2
+        var produces={
+            produce:["one","two","three","for"],
+            selectedProduce:ko.observableArray(['one','two'])
+        }
+        produces.selectedAllProduce=ko.pureComputed({
+            read:function(){
+                return produces.selectedProduce().length===produces.produce.length;
+            },
+            write:function(value)
+            {
+             produces.selectedProduce(value?produces.produce.slice(0):[]);
+            }
+        });
+    
+        ko.applyBindings(produces)
+        // ko.applyBindings(obj)
+    
+    </script>
+    
+</body>
+</html>

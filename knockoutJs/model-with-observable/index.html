@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='text/javascript' src='../library.js'></script>
+    <title>Document</title>
+</head>
+<body>
+    <p><span data-bind="text:firstName"></span></p>
+    <input type="text" data-bind="value:firstName">
+    <script>
+        var obj={
+            firstName:ko.observable("Tuấn "),
+            lastName:ko.observable("Ngoc")
+        }
+        //subcribe đăng ký của riêng nó để thông báo về sự thay đổi của obj.firstName
+        //nôm na là cứ mỗi là thay đổi đc cập nhật thì sẽ vào hàm nàys
+        //nếu muốn lấy giá trị trc khi thay đổi thì có thể thêm  null, "beforeChange" khi ra khỏi hàm 
+        //vd:var fn=obj.firstName.subscribe(function(newVal){console.log(newVal)});
+        var fn=obj.firstName.subscribe(function(newVal){console.log(newVal)});
+        //tắt luôn thông báo (thay đổi sẽ bị dispose )
+        // fn.dispose();
+        
+
+
+        //entend
+        // obj.firstName.extend({ notify: 'never' });
+
+        ko.applyBindings(obj);
+    </script>
+</body>
+</html>
