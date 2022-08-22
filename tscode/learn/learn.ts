@@ -47,8 +47,15 @@ console.log(kv1.key);
 
 //export/import
 //export o mot file khac va file nay import lại nó
-import hello from "./hello.js";
-hello();
+// import hello from "./hello.js";
+// hello();
 
 
 
+import [StringValidator] from "./hello"
+
+export class ZipCodeValidator implements StringValidator {
+    isAcceptable(s: string) {
+        return s.length === 5 && numberRegexp.test(s);
+    }
+}
