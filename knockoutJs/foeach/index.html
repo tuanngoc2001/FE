@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../library.js"></script>
+</head>
+
+<body>
+    <h1 data-bind="text: city"> </h1>
+    <p data-bind="with: coords">
+        緯度(Vĩ độ): <span data-bind="text: latitude"> </span>,
+        経度(Kinh độ): <span data-bind="text: longitude"> </span>
+    </p>
+
+
+
+
+    <table style="width:40%;margin: 0 auto;background-color: #eee;border-radius: 1rem;">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:people">
+            <tr>
+                <td data-bind="text:firstName" style="text-align:center"></td>
+                <td data-bind="text:lastName" style="text-align:center"></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <ul data-bind="foreach:people">
+        <li data-bind="text:firstName"></li>
+        <li data-bind="text:lastName"></li>
+    </ul> -->
+    <script>
+        ko.applyBindings({
+            city: "ロンドン",
+            coords: {
+                latitude: 51.5001524,
+                longitude: -0.1262362
+            }
+        });
+        ko.applyBindings({
+            people: [
+                { firstName: 'Bert', lastName: 'Bertington' },
+                { firstName: 'Charles', lastName: 'Charlesforth' },
+                { firstName: 'Denise', lastName: 'Dentiste' }
+            ]
+        });
+    </script>
+
+</body>
+
+</html>

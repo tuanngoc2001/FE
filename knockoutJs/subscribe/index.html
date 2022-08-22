@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../library.js"></script>
+</head>
+<body>
+    <input type="text" data-bind="value:name" name="" id="">
+    <script>
+        let obj={
+            name:ko.observable("admin"),
+        }
+        obj.name.subscribe(function(newVal)
+        {
+            console.log(newVal);
+        },null,'beforeChange');
+        ko.applyBindings(obj);
+
+
+
+        //utils,extends
+        let wang={
+            id:ko.observable(0),
+            name:ko.observable('Nguyen Tuan Ngoc'),
+            age:ko.observable(30),
+            gender:ko.observable(1)
+        }
+        let exw={
+            position:ko.observable('Technial')
+        };
+        ko.utils.extend(wang,exw);
+        //phan duoc mo rong la tham so dau tien duoc truyen vao trong extend
+        console.log(wang);
+        let wag=ko.observable({
+            id:ko.observable(1),
+            name:ko.observable('Nguyen Tuan Ngoc')
+
+        })
+        console.log(ko.unwrap(wag));
+        
+
+
+        // unwrap
+        //nhan vao mot observable va tra ra gia tri cua observable
+
+
+    </script>
+</body>
+</html>

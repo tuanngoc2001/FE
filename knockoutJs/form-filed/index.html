@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../library.js"></script>
+</head>
+
+<body>
+    <div data-bind="foreach: items">
+        <label>
+            <input type="radio" data-bind="checkedValue: value, checked: $root.checkedValue" />
+            <span data-bind="text: text"></span>
+        </label><br />
+    </div>
+    <div>Selected Value: <span data-bind="text: checkedValue"></span></div>
+    <script>
+        var viewModel = {
+            checkedValue: ko.observable(),
+            items: ko.observableArray([
+                { value: 1, text: 'One' },
+                { value: 2, text: 'Two' },
+                { value: 3, text: 'Three' }
+            ])
+        };
+        ko.applyBindings(viewModel);
+    </script>
+</body>
+
+</html>
