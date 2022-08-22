@@ -22,11 +22,13 @@
 <p><button type="button" data-bind="click: next">Next</button></p>
 <script>
     function AppData() {
+        
     this.firstName = ko.observable('John');
     this.lastName = ko.observable('Burns');
     this.prefix = ko.observable('Dr.');
     this.computedLog = ko.observable('Log: ');
     this.fullName = ko.pureComputed(function () {
+        // console.log(this.step);
         var value = this.prefix() + " " + this.firstName() + " " + this.lastName();
         // Normally, you should avoid writing to observables within a pure computed 
         // observable (avoiding side effects). But this example is meant to demonstrate 
