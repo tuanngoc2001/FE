@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../library.js"></script>
+</head>
+
+<body>
+    <!-- <p>Send me spam: <input type="checkbox" data-bind="checked: wantsSpam" /></p> -->
+
+
+
+    <!-- <p>Send me spam: <input type="checkbox" data-bind="checked: wantsSpam" /></p> -->
+    <!-- <div data-bind="visible: wantsSpam">
+        Preferred flavors of spam:
+        <div><input type="checkbox" value="cherry" data-bind="checked: spamFlavors" /> Cherry</div>
+        <div><input type="checkbox" value="almond" data-bind="checked: spamFlavors" /> Almond</div>
+        <div><input type="checkbox" value="msg" data-bind="checked: spamFlavors" /> Monosodium Glutamate</div>
+    </div> -->
+
+
+    <!-- ko foreach: items -->
+    <input type="checkbox" data-bind="checkedValue: $data, checked: $root.chosenItems" />
+    <span data-bind="text: itemName"></span>
+<!-- /ko -->
+
+    <script type="text/javascript">
+        // var viewModel = {
+        //     wantsSpam: ko.observable(true),
+        //     spamFlavors: ko.observableArray(["cherry", "almond"]) // Initially checks the Cherry and Almond checkboxes
+        // };
+
+        // // ... then later ...
+        // // thêm vào spamFlavors
+        // viewModel.spamFlavors.push("msg"); // Now additionally checks the Monosodium Glutamate checkbox
+
+        
+        var viewModel = {
+        items: ko.observableArray([
+            { itemName: 'Choice 1' },
+            { itemName: 'Choice 2' }
+        ]),
+        chosenItems: ko.observableArray()
+        
+    };
+    ko.applyBindings(viewModel)
+    </script>
+    <!-- <script src="./index.js"></script> -->
+</body>
+
+</html>

@@ -14,7 +14,7 @@
         <label>
             <input type="radio" data-bind="checkedValue: value, checked: $root.checkedValue" />
             <span data-bind="text: text"></span>
-        </label><br />
+        </label><br/>
     </div>
     <div>Selected Value: <span data-bind="text: checkedValue"></span></div>
     <script>
@@ -23,7 +23,7 @@
             items: ko.observableArray([
                 { value: 1, text: 'One' },
                 { value: 2, text: 'Two' },
-                { value: 3, text: 'Three' }
+                { value: 3, text: 'Three'}
             ])
         };
         ko.applyBindings(viewModel);

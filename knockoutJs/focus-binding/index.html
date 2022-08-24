@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../library.js"></script>
+</head>
+
+<body>
+    <!-- giá trị mặc địh là false thì nó sẽ k hiện lên dòng message -->
+    <!-- khi mà bấm vào setIsSelected thì nó set giá trị là true và sẽ hiện lên -->
+    <input data-bind="hasFocus: isSelected" />
+    <button data-bind="click: setIsSelected">Focus programmatically</button>
+    <span data-bind="visible: isSelected">The textbox has focus</span>
+    <script>
+        var viewModel = {
+            isSelected: ko.observable(false),
+            setIsSelected: function () { this.isSelected(true) }
+        };
+        ko.applyBindings(viewModel);
+    </script>
+</body>
+</html>

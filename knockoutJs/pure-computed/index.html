@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../library.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
+    <!-- có thể sử dụng containerless control syntax -->
+    <!-- ví dụ nhưng dòng comment ở dưới cũng là câu lệnh để kiểm tra step() -->
     <div class="log" data-bind="text: computedLog"></div>
 <!--ko if: step() == 0-->
     <p>First name: <input data-bind="textInput: firstName" /></p>
@@ -20,7 +23,7 @@
     <h2>Hello, <span data-bind="text: fullName"> </span>!</h2>
 <!--/ko-->
 <p><button type="button" data-bind="click: next">Next</button></p>
-<script>
+<!-- <script>
     function AppData() {
     this.firstName = ko.observable('John');
     this.lastName = ko.observable('Burns');
@@ -40,7 +43,8 @@
         this.step(this.step() === 2 ? 0 : this.step()+1);
     };
 };
-ko.applyBindings(new AppData());
-</script>
+
+</script> -->
+<script src="./index.js"></script>
 </body>
 </html>
