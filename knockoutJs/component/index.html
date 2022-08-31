@@ -10,50 +10,70 @@
 </head>
 
 <body>
-    <ul data-bind="foreach: products">
-        <li class="product">
-            <strong data-bind="text: name"></strong>
-            <like-widget params="value: userRating"></like-widget>
-        </li>
-    </ul>
-    <script>
-        //         ko.components.register('like-widget', {
-        //     viewModel: function(params) {
-        //         // Data: value is either null, 'like', or 'dislike'
-        //         this.chosenValue = params.value;
+     <!--params attribute is used to pass the parameter to component viewModel.-->
+     <click params = "a: a, b: b"></click>
 
-        //         // Behaviors
-        //         this.like = function() { this.chosenValue('like'); }.bind(this);
-        //         this.dislike = function() { this.chosenValue('dislike'); }.bind(this);
-        //     },
-        //     template:
-        //         '<div class="like-or-dislike" data-bind="visible: !chosenValue()">\
-        //             <button data-bind="click: like">Like it</button>\
-        //             <button data-bind="click: dislike">Dislike it</button>\
-        //         </div>\
-        //         <div class="result" data-bind="visible: chosenValue">\
-        //             You <strong data-bind="text: chosenValue"></strong> it\
-        //         </div>'
-        // });
+     <!--template is used for a component by specifying its ID -->
+     <template id = "click-l">
+        <div data-bind = "text: a"></div>
 
+        <!--Use data-bind attribute to bind click:function() to ViewModel. -->
+        <button data-bind = "click:function(){callback(1)}">Increase</button>
+        <button data-bind = "click:function(){callback(-1)}">Decrease</button>
+     </template>
 
+     <script>
+        //Here components are registered
+        ko.components.register('click', {
+           
+           viewModel: function(params) {
+              self = this;
+              this.a = params.a;
+              this.b = params.b;
 
+              this.callback = function(num) {
+                 self.b(parseInt(num));
+                 self.a( self.a() + parseInt(num) );
+              };
+           },
+           template: { element: 'click-l' }
+        });
 
-        function Product(name, rating) {
-            this.name = name;
-            this.userRating = ko.observable(rating || null);
+        //keeps an eye on variable for any modification in data
+        function viewModel() {
+           this.a = ko.observable(2);
+           this.b = ko.observable(0);
         }
 
-        function MyViewModel() {
-            this.products = [
-                new Product('Garlic bread'),
-                new Product('Pain au chocolat'),
-                new Product('Seagull spaghetti', 'like') // This one was already 'liked'
-            ];
-        }
+        ko.applyBindings(new viewModel() );
+     </script>
+    
 
-        ko.applyBindings(new MyViewModel());
-    </script>
+    <!-- <script>
+                ko.components.register('like-widget', {
+            viewModel: function(params) {
+                // Data: value is either null, 'like', or 'dislike'
+                this.chosenValue = params.value;
+
+                // Behaviors
+                this.like = function() { this.chosenValue('like'); }.bind(this);
+                this.dislike = function() { this.chosenValue('dislike'); }.bind(this);
+            },
+            template:
+                '<div class="like-or-dislike" data-bind="visible: !chosenValue()">\
+                    <button data-bind="click: like">Like it</button>\
+                    <button data-bind="click: dislike">Dislike it</button>\
+                </div>\
+                <div class="result" data-bind="visible: chosenValue">\
+                    You <strong data-bind="text: chosenValue"></strong> it\
+                </div>'
+        }); -->
+
+
+
+
+       
+    <!-- </script> -->
 
 </body>
 
