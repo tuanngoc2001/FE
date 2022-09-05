@@ -14,9 +14,7 @@ var obj={
 
 //tự động kiểm tra tuổi để đưa ra object 
 var users=[
-    {
-        'user':'barney','age':36,'active':true
-    },
+    {'user':'barney','age':36,'active':true},
     {'user':'fred','age':40,'active':false},
     {'user':'pebbles','age':1,'active':true}
 ]
