@@ -8,15 +8,19 @@
     <script src="../library.js"></script>
 </head>
 <body>
-    <input type="text" data-bind="value:name" name="" id="">
+    <input type="text" data-bind="value:name" name="in" id="">
     <script>
         let obj={
             name:ko.observable("admin"),
         }
+        // const as = document.getElementsByName("in");
+        // as.addEventListener("onChange", function(){
+        //     console.log(as.values);
+        // });
         obj.name.subscribe(function(newVal)
         {
-            console.log(newVal);
-        },null,'beforeChange');
+            console.log(newVal)
+        },);
         ko.applyBindings(obj);
 
 

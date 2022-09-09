@@ -1,0 +1,16 @@
++-----------distinct tránh sự trùng lặp trong code
++----------LEFT JOIN:nó sẽ so từ bảng bên trái sang và sẽ so sánh điều kiện on nếu bên phải không có thì vẫn hiện ra với giá trị
+là null
++----------Right Join tương tự left join
++----------GROUPBY câu lệnh gom nhóm vd:SELECT COUNT(CustomerID), Country
+                                        FROM Customers
+                                        GROUP BY Country
+                 note:GROUPby sẽ đứng trước order by và having(câu điều kiện sử dụng các hàm tổng hợp như count,sum,.... còn where thì k
++----------Exits kiểm tra truy vấn con có bản ghi nào hay không
+
+
+
+
+
+//tính đúng đắn ở các aggregate vs valueObject xử lý phần gì thì nên để ở đó
+
